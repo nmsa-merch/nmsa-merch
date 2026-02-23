@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NMSA-Nahda Merch</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0f0f14;
+  color: white;
+}
+header {
+  text-align: center;
+  padding: 40px 20px;
+}
+header h1 {
+  font-size: 32px;
+  color: #1e90ff;
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.card {
+  background: #1a1a22;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+.price {
+  color: #1e90ff;
+  font-weight: bold;
+  margin: 10px 0;
+}
+button {
+  background: #1e90ff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+}
+button:hover {
+  background: #0d6efd;
+}
+footer {
+  text-align: center;
+  padding: 30px 10px;
+  background: #111;
+  margin-top: 40px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>NMSA-Nahda Merch Store</h1>
+  <p>Pickup from University Only • Limited Stock</p>
+</header>
+
+<section class="products">
+
+  <!-- PRODUCT TEMPLATE (Copy & Edit for real products) -->
+
+  <div class="card">
+    <img src="https://via.placeholder.com/300" alt="Product">
+    <h3>Black Hoodie</h3>
+    <p class="price">450 EGP</p>
+    <button onclick="order('Black Hoodie - 450 EGP')">Order (Pickup)</button>
+  </div>
+
+  <div class="card">
+    <img src="https://via.placeholder.com/300" alt="Product">
+    <h3>NMSA T-Shirt</h3>
+    <p class="price">250 EGP</p>
+    <button onclick="order('NMSA T-Shirt - 250 EGP')">Order (Pickup)</button>
+  </div>
+
+  <!-- Duplicate above card to reach 10 items -->
+
+</section>
+
+<footer>
+  <p>Orders confirmed via WhatsApp</p>
+  <p>Phone: 01XXXXXXXXX</p>
+</footer>
+
+<script>
+function order(product) {
+  const phone = "201XXXXXXXXX"; // PUT YOUR NUMBER HERE LATER
+  const message = `Hi, I want to order ${product}. Pickup from university.`;
+  window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, "_blank");
+}
+</script>
+
+</body>
+</html>
