@@ -4,108 +4,147 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NMSA-Nahda Merch</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
-body {
+* {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #0f0f14;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background: #0c0f17;
   color: white;
 }
-header {
+
+/* HERO SECTION */
+.hero {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0c0f17 40%, #0d6efd 120%);
   text-align: center;
-  padding: 40px 20px;
-}
-header h1 {
-  font-size: 32px;
-  color: #1e90ff;
-}
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
   padding: 20px;
 }
-.card {
-  background: #1a1a22;
-  border-radius: 12px;
-  padding: 15px;
+
+.hero h1 {
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.hero p {
+  margin-top: 15px;
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+.badge {
+  margin-top: 20px;
+  background: #0d6efd;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* PRODUCTS */
+.section-title {
   text-align: center;
-  transition: 0.3s;
+  margin: 60px 0 30px;
+  font-size: 28px;
 }
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  padding: 0 40px 60px;
+}
+
+.card {
+  background: #141824;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
 }
+
 .card img {
   width: 100%;
-  border-radius: 10px;
+  height: 240px;
+  object-fit: cover;
 }
+
+.card-content {
+  padding: 20px;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
 .price {
-  color: #1e90ff;
-  font-weight: bold;
-  margin: 10px 0;
+  color: #0d6efd;
+  font-weight: 600;
+  margin-bottom: 15px;
 }
+
 button {
-  background: #1e90ff;
+  width: 100%;
+  padding: 10px;
   border: none;
-  padding: 10px 15px;
-  border-radius: 8px;
-  color: white;
-  cursor: pointer;
-  font-weight: 500;
-}
-button:hover {
   background: #0d6efd;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
 }
+
+button:hover {
+  background: #084298;
+}
+
+/* FOOTER */
 footer {
   text-align: center;
-  padding: 30px 10px;
-  background: #111;
-  margin-top: 40px;
+  padding: 40px 20px;
+  background: #0a0d14;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+@media(max-width: 600px) {
+  .hero h1 {
+    font-size: 30px;
+  }
 }
 </style>
 </head>
+
 <body>
 
-<header>
-  <h1>NMSA-Nahda Merch Store</h1>
-  <p>Pickup from University Only • Limited Stock</p>
-</header>
+<section class="hero">
+  <h1>NMSA-Nahda Merch</h1>
+  <p>Wear the identity. Represent the mission.</p>
+  <div class="badge">Pickup from University Only</div>
+</section>
+
+<h2 class="section-title">Our Collection</h2>
 
 <section class="products">
 
-  <!-- PRODUCT TEMPLATE (Copy & Edit for real products) -->
-
+  <!-- PRODUCT 1 -->
   <div class="card">
-    <img src="https://via.placeholder.com/300" alt="Product">
-    <h3>Black Hoodie</h3>
-    <p class="price">450 EGP</p>
-    <button onclick="order('Black Hoodie - 450 EGP')">Order (Pickup)</button>
-  </div>
-
-  <div class="card">
-    <img src="https://via.placeholder.com/300" alt="Product">
-    <h3>NMSA T-Shirt</h3>
-    <p class="price">250 EGP</p>
-    <button onclick="order('NMSA T-Shirt - 250 EGP')">Order (Pickup)</button>
-  </div>
-
-  <!-- Duplicate above card to reach 10 items -->
-
-</section>
-
-<footer>
-  <p>Orders confirmed via WhatsApp</p>
-  <p>Phone: 01XXXXXXXXX</p>
-</footer>
-
-<script>
-function order(product) {
-  const phone = "201XXXXXXXXX"; // PUT YOUR NUMBER HERE LATER
-  const message = `Hi, I want to order ${product}. Pickup from university.`;
-  window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, "_blank");
-}
-</script>
-
-</body>
-</html>
+    <img src="https://via.placeholder.com/400x400" alt="Hoodie">
+    <div class="card-content">
+      <h3>Black Hoodie</h3>
+      <div class="price">450 EGP</div>
+      <button onclick="order('Black Hoodie - 450 EGP')">Order for
